@@ -7,6 +7,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\event\Listener;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
+use pocketmine\event\entity\EntityExplodeEvent;
 use pocketmine\Server;
 use pocketmine\utils\TextFormat as Color;
 use pocketmine\event\entity\EntityDamageEvent;
@@ -65,6 +66,15 @@ class Main extends PluginBase implements Listener {
   * @ignoreCancelled true
   */
   public function onHurt(EntityDamageEvent $event) {
+    
+  }
+    /**
+  * @param EntityExplodeEvent $event
+  *
+  * @priority HIGHEST
+  * @ignoreCancelled false
+  */
+    public function onExplode(EntityExplodeEvent $event) {
     
   }
   public function onDisable() {

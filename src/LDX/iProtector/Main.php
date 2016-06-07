@@ -244,7 +244,7 @@ class Main extends PluginBase implements Listener {
 
     public function onHungerChange(PlayerHungerChangeEvent $event) {
         $p = $event->getPlayer();
-        if (!$this->canGetHungry($p)) {
+        if (!$this->canGetHungry($p) && $p->getFood() > 0) {
             $event->setCancelled();
         }
     }

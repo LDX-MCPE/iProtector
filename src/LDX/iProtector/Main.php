@@ -229,10 +229,20 @@ class Main extends PluginBase implements Listener {
       $p = $event->getEntity();
       $x = false;
       if(!$this->canGetHurt($p)) {
+       $event->setCancelled();
+}
+        if($event instanceof EntityDamageByEntityEvent){
+            if($event->getDamager() instanceof Player){
+      $p = $event->getDamager();
+      if(!$this->canGetHurt($p)) {
+        $mes = "§6§lHey! §r§4You can't hit players here!";
+        $p->sendMessage($mes);
         $event->setCancelled();
+        }
       }
     }
   }
+}
 
   public function onBlockBreak(BlockBreakEvent $event) {
     $b = $event->getBlock();

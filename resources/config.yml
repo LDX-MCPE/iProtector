@@ -12,6 +12,9 @@ Default:
   # Keep players from touching blocks and activating things like chests?
   Touch: false
 
+  # Keep players from getting hungry?
+  Hunger: false
+
 # Settings for unprotected areas in individual worlds:
 Worlds:
 
@@ -25,3 +28,6 @@ Worlds:
 
     # Keep players from touching blocks and activating things like chests?
     Touch: false
+
+    # Keep players from getting hungry?
+    Hunger: false
